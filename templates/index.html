@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Registration Form</title>
+</head>
+<body>
+
+    <!-- Flash Messages - Always on Top -->
+    <div class="flash-container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+    </div>
+
+    <form method="POST" action="{{ url_for('register') }}">
+        <div class="main">
+            <center>
+                <h2>Registration Form</h2>
+                <br>
+                <div class="main-container">
+                    <div>
+                        <label>Full Name</label><br>
+                        <input class="a1" name="full_name" type="text" minlength="2" maxlength="25" placeholder="Enter your name" required>
+                    </div>
+                    <div>
+                        <label>Username</label><br>
+                        <input class="a1" name="username" type="text" minlength="2" maxlength="25" placeholder="Enter your username" required>
+                    </div>
+                    <div>
+                        <label>Email</label><br>
+                        <input class="a1" name="email" type="email" minlength="2" maxlength="25" placeholder="Enter your email" required>
+                    </div>
+                    <div>
+                        <label>Phone Number</label><br>
+                        <input class="a1" name="phone" type="tel" pattern="^\d{10}$" placeholder="Enter your phone number" required>
+                    </div>
+                    <div>
+                        <label>Password</label><br>
+                        <input name="password" class="a1" type="password" minlength="2" maxlength="25" placeholder="Enter your password" required>
+                    </div>
+                    <div>
+                        <label>Confirm Password</label><br>
+                        <input name="confirm_password" class="a1" type="password" minlength="2" placeholder="Confirm your password" required>
+                    </div>
+                    <div class="gender">
+                        <label>Gender</label>
+                        <div>
+                            <label>
+                                <input class="radio-class" name="gender" type="radio" value="Male" required> Male
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input class="radio-class" name="gender" type="radio" value="Female" required> Female
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input class="radio-class" name="gender" type="radio" value="Others" required> Others
+                            </label>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <button type="submit">Register</button>
+            </center>
+        </div>
+    </form>
+
+</body>
+</html>

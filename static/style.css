@@ -1,0 +1,128 @@
+/* Reset default padding and margin */
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+/* Centering the form */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: linear-gradient(135deg, #71e684, #9a10d1); */
+    flex-direction: column;
+}
+
+/* Flash Messages - Always on Top */
+/* Flash Messages - Always on Top */
+.flash-container {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    z-index: 1000;
+}
+
+/* Flash Message Box */
+.alert {
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    width: 100%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Error (Danger) Alert */
+.alert-danger {
+    background-color: #f8d7da !important;
+    color: #721c24 !important;
+    border: 1px solid #f5c6cb !important;
+}
+
+/* Success Alert */
+.alert-success {
+    background-color: #d4edda !important;
+    color: #155724 !important;
+    border: 1px solid #c3e6cb !important;
+}
+
+
+/* Form Container */
+.main {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: aliceblue;
+    margin: 20px;
+    padding: 20px;
+    border: 5px solid #000000;
+}
+
+/* Input Grid Layout */
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+/* Input Styles */
+.a1 {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+/* Radio Button Styles */
+.radio-class {
+    width: auto;
+    height: auto;
+}
+
+/* Gender Section */
+.gender {
+    display: flex;
+    column-gap: 30px;
+}
+
+/* Submit Button */
+button {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    margin-top: 29px;
+    background: linear-gradient(135deg, #465f74, #000000);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Hover Effect on Button */
+/* button:hover {
+    background: linear-gradient(135deg, #71e6a2, #018cfd);
+} */
+
+/* Labels */
+label {
+    font-size: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+/* Make form responsive */
+@media (max-width: 768px) {
+    .flash-container {
+        width: 80%;
+    }
+    .main-container {
+        grid-template-columns: 1fr;
+    }
+}
